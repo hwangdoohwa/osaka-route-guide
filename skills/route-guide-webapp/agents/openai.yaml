@@ -1,0 +1,4 @@
+interface:
+  display_name: "길안내 웹앱 만들기"
+  short_description: "공식 경로와 원본 현장사진으로 따라가기 쉬운 모바일 길안내 웹앱 제작"
+  default_prompt: "$route-guide-webapp 스킬로 원본 사진과 공식 안내를 검증하고 진행 상태가 저장되는 한국어 모바일 길안내 웹앱을 만들어줘."

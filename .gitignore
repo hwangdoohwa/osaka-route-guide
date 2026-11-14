@@ -1,0 +1,7 @@
+.sites-local/
+.env*
+*.log
+private-research/
+node_modules/
+미리보기-*.png
+작업상태.md
