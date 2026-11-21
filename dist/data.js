@@ -1,26 +1,325 @@
-export const checked='2026-11-14';
+export const checked='2026-11-22';
 export const sources=[
-{id:'kix',name:'간사이공항 공식 · 제2터미널 연결 버스',url:'https://www.kansai-airport.or.jp/access/t2',fact:'무료 셔틀 · 에어로플라자 · 승차 7~9분'},
-{id:'faq',name:'간사이공항 공식 · 도착 후 철도 이용',url:'https://www.kansai-airport.or.jp/faq/10556',fact:'국제선 도착 출구 앞 무료 셔틀 승차 위치'},
-{id:'nk32',name:'난카이 공식 · 간사이공항역',url:'https://www.nankai.co.jp/traffic/station/kansaiairport.html',fact:'역명·역 번호 NK32 · 난카이 1·2번 승강장'},
-{id:'nk01',name:'난카이 공식 · 난바역',url:'https://www.nankai.co.jp/traffic/station/namba.html',fact:'종착역 NK01 · 3층 북쪽 개찰구'},
-{id:'city',name:'오사카시 · 난바 환승 사진 안내',url:'https://www.city.osaka.lg.jp/shimin/page/0000590251.html',fact:'3F 북쪽 개찰구 → 1F → B1 · 사진 CC BY 4.0'},
-{id:'m20',name:'Osaka Metro 공식 · 난바역',url:'https://subway.osakametro.co.jp/station_guide/m/m20/index.php',fact:'미도스지선 M20 · 우메다 방면 2번 승강장'},
-{id:'m19',name:'Osaka Metro 공식 · 신사이바시역 안내도',url:'https://subway.osakametro.co.jp/station_guide/m/m19/map.php',fact:'M19 · 북쪽 개찰구 · 1번 출구'},
-{id:'cars',name:'Osaka Metro 공식 · 차량별 계단 위치',url:'https://subway.osakametro.co.jp/station_guide/m/m19/joukouichi.php',fact:'8호차 쪽 계단·에스컬레이터 / 9호차 쪽 엘리베이터'},
-{id:'clinic',name:'AND美容外科 공식 · 신사이바시원',url:'https://and-bg.com/clinic/shinsaibashi/',fact:'미나미센바 3-6-18 케즈빌딩 10F · 역에서 도보 3분 안내'},
-{id:'blog',name:'Asia Transit Note · 현장 사진 안내',url:'https://kaigai-note.com/kansai-airport-terminal2/',fact:'2026년 7월 취재 표기. 개별 사진 촬영일은 별도 확인 필요'}];
-const blog='https://kaigai-note.com/wp-content/uploads/2026/08/';
+  {
+    "id": "kix",
+    "name": "간사이공항 공식 · 제2터미널 연결 버스",
+    "url": "https://www.kansai-airport.or.jp/access/t2",
+    "fact": "무료 셔틀 · 에어로플라자 · 승차 7~9분"
+  },
+  {
+    "id": "faq",
+    "name": "간사이공항 공식 · 도착 후 철도 이용",
+    "url": "https://www.kansai-airport.or.jp/faq/10556",
+    "fact": "국제선 도착 출구 앞 무료 셔틀 승차 위치"
+  },
+  {
+    "id": "nk32",
+    "name": "난카이 공식 · 간사이공항역",
+    "url": "https://www.nankai.co.jp/traffic/station/kansaiairport.html",
+    "fact": "역명·역 번호 NK32 · 난카이 1·2번 승강장"
+  },
+  {
+    "id": "nk01",
+    "name": "난카이 공식 · 난바역",
+    "url": "https://www.nankai.co.jp/traffic/station/namba.html",
+    "fact": "종착역 NK01 · 3층 북쪽 개찰구"
+  },
+  {
+    "id": "city",
+    "name": "오사카시 · 서비스카운터 가는 길의 일부 공통 구간",
+    "url": "https://www.city.osaka.lg.jp/shimin/page/0000590251.html",
+    "fact": "북개찰→1F→B1 일부 공통 구간 사진만 참고. 지하철 개찰구까지 전체 동선을 입증하는 자료는 아님. CC BY 4.0"
+  },
+  {
+    "id": "m20",
+    "name": "Osaka Metro 공식 · 난바역",
+    "url": "https://subway.osakametro.co.jp/station_guide/m/m20/index.php",
+    "fact": "미도스지선 M20 · 우메다 방면 2번 승강장"
+  },
+  {
+    "id": "m19",
+    "name": "Osaka Metro 공식 · 신사이바시역 안내도",
+    "url": "https://subway.osakametro.co.jp/station_guide/m/m19/map.php",
+    "fact": "M19 · 북쪽 개찰구 위치 확인. 병원은 크리스타 나가호리 北8 출구 동선으로 안내하며 역 출구 번호와 구별"
+  },
+  {
+    "id": "cars",
+    "name": "Osaka Metro 공식 · 차량별 계단 위치",
+    "url": "https://subway.osakametro.co.jp/station_guide/m/m19/joukouichi.php",
+    "fact": "8호차 쪽 계단·에스컬레이터 / 9호차 쪽 엘리베이터"
+  },
+  {
+    "id": "clinic",
+    "name": "AND美容外科 공식 · 신사이바시원",
+    "url": "https://and-bg.com/clinic/shinsaibashi/",
+    "fact": "북개찰 → 크리스타 나가호리 北8 → 상점가 혼마치 방면 약2분 → AND 간판 입구 → 10F"
+  },
+  {
+    "id": "blog",
+    "name": "Asia Transit Note · 현장 사진 안내",
+    "url": "https://kaigai-note.com/kansai-airport-terminal2/",
+    "fact": "2026년 7월 취재 표기. 개별 사진 촬영일은 별도 확인 필요"
+  },
+  {
+    "id": "ride",
+    "name": "난카이 공식 · 발권·개찰·승차 방법",
+    "url": "https://www.nankai.co.jp/en_railway/access-ride",
+    "fact": "표 구매 → 개찰 → 열차 확인 → 탑승"
+  },
+  {
+    "id": "qr",
+    "name": "난카이 공식 · 라피트 디지털 티켓",
+    "url": "https://www.nankai.co.jp/en_railway/ticket/rapit",
+    "fact": "해당 상품의 열차·좌석 지정, QR 전용 개찰 이용"
+  },
+  {
+    "id": "metrogate",
+    "name": "Osaka Metro 공식 · 자동개찰 이용",
+    "url": "https://subway.osakametro.co.jp/guide/usage/automatic_ticket_gate/jidoukaisatsuki.php",
+    "fact": "IC 터치·자기승차권 투입, 오류 시 직원 문의"
+  },
+  {
+    "id": "adult",
+    "name": "난카이 공식 · 성인·아동 구분",
+    "url": "https://www.nankai.co.jp/en_railway/traffic/guide.html",
+    "fact": "중학생 동반 가족은 성인 운임 3명으로 준비"
+  }
+];
 export const photos={
-shuttle:{src:blog+'kansai-airport-terminal2-to-terminal1-shuttle-bus-edited.jpg',alt:'제2터미널에서 공항역·제1터미널로 가는 무료 셔틀 안내',credit:'Asia Transit Note · 원본 외부 이미지',date:'2026년 7월 취재 기사 / 이 사진의 개별 촬영일 미표기',source:'blog',note:'T1·空港駅 방향을 찾으세요. 출발 터미널로 돌아가는 T2행과 구별하세요.'},
-timetable:{src:blog+'kansai-airport-terminal2-to-terminal1-shuttle-bus-timetable-766x1024.jpg',alt:'제2터미널에서 공항역 방향 무료 셔틀 시각표',credit:'Asia Transit Note · 원본 외부 이미지',date:'사진 설명에 2026년 7월 촬영 표기',source:'blog',note:'사진은 위치 확인용입니다. 실제 운행은 공식 최신 시각표를 확인하세요.'},
-north:{src:'assets/northgate.jpg',alt:'난카이 난바역 3층 북쪽 개찰구의 모습',credit:'오사카시 · CC BY 4.0 · 원본 무수정',date:'개별 촬영일 미표기 / 안내 페이지 2026년 1월 갱신',source:'city',note:'3F北改札口(3층 북쪽 개찰구)를 찾으세요.'},
-down:{src:'assets/down.jpg',alt:'난바역 북쪽 개찰구 쪽에서 1층으로 내려가는 에스컬레이터',credit:'오사카시 · CC BY 4.0 · 원본 무수정',date:'개별 촬영일 미표기',source:'city',note:'정면 왼쪽 에스컬레이터로 1층까지 내려갑니다.'},
-b1:{src:'assets/b1.jpg',alt:'난바역에서 지하 1층으로 내려가는 에스컬레이터',credit:'오사카시 · CC BY 4.0 · 원본 무수정',date:'개별 촬영일 미표기',source:'city',note:'1층에서 지하 1층으로 한 번 더 내려갑니다.'}};
+  "shuttle": {
+    "src": "https://kaigai-note.com/wp-content/uploads/2026/08/kansai-airport-terminal2-to-terminal1-shuttle-bus-edited.jpg",
+    "alt": "제2터미널에서 공항역·제1터미널로 가는 무료 셔틀 안내",
+    "credit": "Asia Transit Note · 원본 외부 이미지",
+    "date": "2026년 7월 취재 기사 / 이 사진의 개별 촬영일 미표기",
+    "source": "blog",
+    "note": "T1·空港駅 방향을 찾으세요. 출발 터미널로 돌아가는 T2행과 구별하세요."
+  },
+  "timetable": {
+    "src": "https://kaigai-note.com/wp-content/uploads/2026/08/kansai-airport-terminal2-to-terminal1-shuttle-bus-timetable-766x1024.jpg",
+    "alt": "제2터미널에서 공항역 방향 무료 셔틀 시각표",
+    "credit": "Asia Transit Note · 원본 외부 이미지",
+    "date": "사진 설명에 2026년 7월 촬영 표기",
+    "source": "blog",
+    "note": "사진은 위치 확인용입니다. 실제 운행은 공식 최신 시각표를 확인하세요."
+  },
+  "north": {
+    "src": "assets/northgate.jpg",
+    "alt": "난카이 난바역 3층 북쪽 개찰구의 모습",
+    "credit": "오사카시 · CC BY 4.0 · 원본 무수정",
+    "date": "개별 촬영일 미표기 / 원문 페이지 2026년 10월 갱신",
+    "source": "city",
+    "note": "3F北改札口(3층 북쪽 개찰구)를 찾으세요."
+  },
+  "down": {
+    "src": "assets/down.jpg",
+    "alt": "난바역 북쪽 개찰구 쪽에서 1층으로 내려가는 에스컬레이터",
+    "credit": "오사카시 · CC BY 4.0 · 원본 무수정",
+    "date": "개별 촬영일 미표기",
+    "source": "city",
+    "note": "정면 왼쪽 에스컬레이터로 1층까지 내려갑니다."
+  },
+  "b1": {
+    "src": "assets/b1.jpg",
+    "alt": "난바역에서 지하 1층으로 내려가는 에스컬레이터",
+    "credit": "오사카시 · CC BY 4.0 · 원본 무수정",
+    "date": "개별 촬영일 미표기",
+    "source": "city",
+    "note": "1층에서 지하 1층으로 한 번 더 내려갑니다."
+  }
+};
 export const steps=[
-{id:1,icon:'🧳',tag:'제2터미널 · 1층',title:'세관을 지나 도착 로비로',from:'제2터미널 국제선 도착 로비',to:'도착 출구 밖 무료 셔틀 승차장',time:'도보 약 2~5분 · 계획값',actions:['수하물을 찾고 세관까지 통과한 뒤부터 시작하세요.','로비에서 「無料連絡バス / Free Shuttle Bus」와 「T1・空港駅」 표지를 찾으세요.','국제선 도착 출구로 건물 밖에 나가면 출구 앞 무료 셔틀 승차장으로 이동합니다.'],sign:'無料連絡バス → 空港駅・第1ターミナル\nFree Shuttle Bus → Railway / Terminal 1',warning:'공항 리무진(유료) 승차장과 달라요. 무료 셔틀 표시를 확인하세요.',extra:'로비 크기·출입문 번호는 확인된 공식 자료가 없어 특정하지 않았습니다. 출구의 최신 근접 실사도 확보하지 못했습니다.',photo:'shuttle',refs:['faq','kix'],map:'関西国際空港 第2ターミナル 国際線 到着'},
-{id:2,icon:'🚌',tag:'무료 셔틀 → 도보',title:'에어로플라자에서 2층으로',from:'제2터미널 무료 셔틀 승차장',to:'간사이공항역 2층 개찰구',time:'버스 7~9분 공식값 + 대기 0~10분·도보 5~8분 계획값',actions:['「空港駅・第1ターミナル・エアロプラザ」 방향 무료 셔틀에 탑니다. 표는 필요 없어요.','에어로플라자 1층에서 내려 「鉄道 / Railway」 표지를 찾습니다.','에스컬레이터 또는 엘리베이터로 2층 → 연결 통로를 건너 간사이공항역으로 갑니다.'],sign:'鉄道 / Railway\n関西空港駅 / Kansai-airport Station',warning:'제1터미널 건물까지 들어갈 필요 없어요. 목적지는 철도역입니다.',extra:'셔틀 대기는 혼잡에 따라 길어질 수 있어요. 사진 속 시각표가 여행 당일 운행을 보장하지는 않습니다.',photo:'timetable',refs:['kix','nk32'],map:'南海 関西空港駅'},
-{id:3,icon:'🚆',tag:'난카이 · NK32 → NK01',title:'난카이 난바행을 타세요',from:'간사이공항역 NK32',to:'종착역 난카이 난바역 NK01',time:'열차 약 35~50분 + 표 구매·대기 5~15분 계획값',actions:['2층에서 「南海 / NANKAI」 개찰구를 찾으세요. JR과 회사·개찰구가 달라요.','「なんば / Namba」행을 선택합니다. 라피트는 지정석 특급권이 추가로 필요하고, 공항급행은 별도 특급권이 없어요.','개찰 후 1층의 난카이 1·2번 승강장 중 전광판에 표시된 승강장으로 내려갑니다.','종착역 난바에서 내립니다. 공항급행은 도착역 포함 11번째, 라피트 α는 5번째·β는 7번째 정차역입니다.'],sign:'南海 / NANKAI → なんば / Namba\n関西空港 NK32 → なんば NK01',warning:'JR 3·4번 승강장으로 가지 마세요. 열차 종류보다 「난바행」과 출발 전광판을 확인하세요.',extra:'위 승차시간은 대표 소요 범위입니다. 실제 열차 시각은 고정하지 않았어요. 빠른 하차 호차·내리는 문은 미확인이라 지정하지 않습니다.',refs:['nk32','nk01'],map:'南海 なんば駅'},
-{id:4,icon:'🚶',tag:'환승 도보 · 가장 주의할 단계',title:'3층 북쪽 개찰구 → 지하 1층',from:'난카이 난바역 3층',to:'미도스지선 난바역 M20',time:'환승 도보 약 10~15분 · 가족·짐 기준 계획값',actions:['열차에서 내려 「3F北改札口 / North Gate」로 나갑니다.','개찰구를 나와 정면 왼쪽 에스컬레이터로 1층까지 내려갑니다.','1층에서 지하 1층으로 한 번 더 내려가세요.','「Osaka Metro」와 빨간 원 안 M 「御堂筋線」 표지를 따라 「南北改札 / Minami-kita Gate」로 갑니다.'],sign:'御堂筋線 / Midosuji Line · 빨간 M\n南北改札 / Minami-kita Gate',warning:'난카이와 지하철 난바는 서로 다른 역 공간이에요. 「南北改札」은 한 개찰구 이름입니다.',extra:'계단·에스컬레이터 기준 경로입니다. 큰 짐 때문에 엘리베이터를 이용하면 역 안내도에서 별도 동선을 확인하세요.',photo:'north',gallery:['down','b1'],refs:['city','nk01','m20'],map:'Osaka Metro なんば駅 御堂筋線'},
-{id:5,icon:'Ⓜ',tag:'미도스지선 · M20 → M19',title:'2번 승강장, 한 정거장만',from:'미도스지선 난바역 M20',to:'신사이바시역 M19',time:'승차 약 2분 + 대기 0~7분 계획값',actions:['「2番線 / Platform 2」로 갑니다.','「梅田・新大阪・箕面萱野方面 / for Umeda, Shin-Osaka, Minoh-kayano」 표시를 확인하세요.','한 정거장 뒤 「心斎橋 / Shinsaibashi M19」에서 내립니다.','가능하면 8호차 쪽(북쪽 계단·에스컬레이터)에 타세요. 엘리베이터는 9호차 쪽입니다.'],sign:'2番線 → 梅田・新大阪・箕面萱野方面\nM20 なんば → M19 心斎橋',warning:'1번 승강장 「天王寺・なかもず方面」은 반대 방향! 평일 6호차는 여성전용입니다.',extra:'가족은 8호차를 우선 고려하세요. 혼잡하면 호차를 맞추려고 무리하게 이동하지 마세요. 내리는 문 방향은 지정하지 않았습니다.',refs:['m20','cars'],map:'心斎橋駅'},
-{id:6,icon:'🏁',tag:'북쪽 개찰구 · 1번 출구',title:'지상으로 나와 병원 10층으로',from:'신사이바시역 M19',to:'케즈빌딩 10층 · AND美容外科 心斎橋院',time:'도보·건물 진입 약 5~10분 계획값 (병원 안내: 역에서 3분)',actions:['「北改札 / North Gate」로 나와 「1番出口 / Exit 1」로 나갑니다.','지상에서 아래 지도 버튼을 눌러 병원 주소까지 도보 길안내를 시작하세요.','「ケーズビル / K’s Building」를 확인하고 엘리베이터로 10층에 올라갑니다.','접수에서 슬림클리닉 신사이바시 예약이라고 말하고 예약 화면을 보여주세요.'],sign:'大阪市中央区南船場3-6-18\nケーズビル 10F / K’s Building 10F',warning:'출구 1은 계단 동선입니다. 엘리베이터 출구는 위치가 달라요. 건물 이름·주소·10층을 함께 확인하세요.',extra:'방문 장소는 AND美容外科 신사이바시원입니다. 예약 안내에 다른 주소가 있으면 방문 전에 예약 대화방에서 확인하세요.',refs:['m19','clinic'],map:'大阪市中央区南船場3-6-18 ケーズビル'}];
+  {
+    "id": 1,
+    "icon": "🧳",
+    "tag": "제2터미널 · 1층",
+    "title": "도착 로비에서 무료 셔틀 찾기",
+    "from": "제2터미널 국제선 도착 로비",
+    "to": "도착 출구 밖 무료 셔틀 승차장",
+    "time": "도보 약 2~5분 · 계획값",
+    "actions": [
+      "수하물을 찾고 세관까지 통과하면 제2터미널 국제선 도착 로비입니다. 여기서 안내를 시작하세요.",
+      "천장·주변 표지에서 「無料連絡バス / Free Shuttle Bus」와 「T1・空港駅」 방향을 찾습니다.",
+      "국제선 도착 출구로 건물 밖에 나가 출구 앞 무료 셔틀 승차장으로 이동합니다. 아래 정류장 사진의 「to T1」 표시를 비교하세요.",
+      "버스나 승차장에 「空港駅・第1ターミナル・エアロプラザ」가 있는지 확인합니다. 확신이 없으면 직원에게 아래 일본어 문장을 보여주세요."
+    ],
+    "sign": "無料連絡バス → 空港駅・第1ターミナル\nFree Shuttle Bus → Railway / Terminal 1",
+    "warning": "공항 리무진(유료) 승차장과 달라요. 무료 셔틀 표시를 확인하세요.",
+    "extra": "출입문 번호와 로비 내부의 좌·우 방향은 검증된 자료가 없어 지정하지 않습니다. 정류장 사진은 출입문을 나온 뒤 비교하는 참고 자료입니다. 표지판이 안 보이면 임의로 다른 출구를 찾기보다 직원에게 문의하세요.",
+    "photo": "shuttle",
+    "refs": [
+      "faq",
+      "kix"
+    ],
+    "phrase": "空港駅・第1ターミナル行きの無料連絡バス乗り場はどこですか？",
+    "mapUrl": "https://www.kansai-airport.or.jp/access/t2",
+    "mapLabel": "공항 공식 셔틀 승차장 안내 보기"
+  },
+  {
+    "id": 2,
+    "icon": "🚌",
+    "tag": "무료 셔틀 → 도보",
+    "title": "무료 셔틀 탑승 → 공항역 이동",
+    "from": "제2터미널 무료 셔틀 승차장",
+    "to": "간사이공항역 2층 개찰구",
+    "time": "버스 7~9분 공식값 + 대기 0~10분·도보 5~8분 계획값",
+    "actions": [
+      "지금은 제2터미널의 무료 셔틀 승차장입니다. 「空港駅・第1ターミナル・エアロプラザ」행 버스에 탑니다. 표·요금은 없습니다.",
+      "안내에 따라 줄을 서서 짐을 챙겨 탑승합니다. 버스 안에서는 큰 짐을 놓치지 않게 잡아 주세요.",
+      "에어로플라자(Aeroplaza) 1층에서 내립니다. 여기서부터 도보입니다. 「鉄道 / Railway」 표지를 찾으세요.",
+      "역 방향 표지에 따라 에스컬레이터 또는 엘리베이터로 2층으로 올라갑니다.",
+      "2층 연결 통로를 건너 「関西空港駅 / Kansai-airport Station」에 도착하면, 다음 단계에서 「南海 / NANKAI」를 찾습니다."
+    ],
+    "sign": "鉄道 / Railway\n関西空港駅 / Kansai-airport Station",
+    "warning": "제1터미널 건물까지 들어갈 필요 없어요. 목적지는 철도역입니다.",
+    "extra": "승차 7~9분과 대기·도보는 별도입니다. 시각표 사진은 사진·근거 탭에서 참고할 수 있습니다. 하차장·연결통로의 최신 실사는 확보하지 못해 철도 표지 기준으로 안내합니다.",
+    "photo": "shuttle",
+    "refs": [
+      "kix",
+      "nk32"
+    ],
+    "mapUrl": "https://www.kansai-airport.or.jp/access/t2",
+    "mapLabel": "공항 공식 셔틀·연결통로 안내 보기",
+    "phrase": "関西空港駅の南海電車の改札はどこですか？"
+  },
+  {
+    "id": 3,
+    "icon": "🚆",
+    "tag": "난카이 · NK32 → NK01",
+    "title": "난카이 표 준비 → 개찰 → 탑승",
+    "from": "간사이공항역 NK32",
+    "to": "종착역 난카이 난바역 NK01",
+    "time": "열차 약 35~50분 + 표 구매·대기 5~15분 계획값",
+    "actions": [
+      "공항역 2층에서 「南海 / NANKAI」 개찰구와 발권 창구·자동발매기를 찾습니다. 파란 JR 쪽으로 들어가지 마세요.",
+      "개찰구에 들어가기 전에 승차 수단을 준비합니다. 표가 없다면 위 「현장 종이표」 안내를 먼저 읽으세요. 중학생 포함 가족 3명은 성인 3명입니다.",
+      "라피트와 공항급행 중 난바에 먼저 도착하는 열차를 직원·전광판으로 확인합니다. 라피트는 지정 열차·좌석, 공항급행은 자유석입니다. 요금도 다릅니다.",
+      "위 안내의 종이표·IC·QR 중 본인 방식에 맞춰 개찰구로 들어갑니다. 종이표는 들어갈 때 나온 표를 반드시 다시 챙깁니다.",
+      "전광판의 열차명·난바행·출발 시각·승강장을 확인한 뒤 1층의 난카이 1·2번 중 표시된 승강장으로 내려갑니다.",
+      "라피트는 표에 적힌 출발 시각·호차·좌석으로 탑승합니다. 공항급행은 「なんば / Namba」행인지 확인하고 탑승합니다.",
+      "종착역 「なんば / Namba NK01」까지 갑니다. 정차 수를 세기보다 종착역 이름을 확인하세요. 내릴 때 짐과 표·휴대폰을 챙깁니다."
+    ],
+    "sign": "南海 / NANKAI → なんば / Namba\n関西空港 NK32 → なんば NK01",
+    "warning": "라피트는 아무 열차나 타는 표가 아닙니다. 지정된 출발 시각·호차·좌석을 확인하세요. 난카이용 표가 지하철 표를 대신하지는 않습니다.",
+    "extra": "빠른 하차 호차와 내리는 문은 지정하지 않습니다. 출발 시각은 실시간 연동하지 않으므로 현장 전광판을 확인하세요. QR 이용이 막히면 직원에게 상품 화면을 보여주세요.",
+    "refs": [
+      "nk32",
+      "nk01",
+      "ride",
+      "qr",
+      "adult"
+    ],
+    "tickets": [
+      {
+        "title": "① 표가 없어요 — 현장 종이표 (처음이면 이 방법부터)",
+        "text": "개찰구 밖 난카이 창구·발매기에서 난바까지 성인 3명분을 구입합니다. 직원에게 아래 일본어를 보여주면 편합니다. 라피트를 선택하면 기본 승차권과 지정석 특급권을 함께 준비하고 출발 시각·호차·좌석을 확인하세요. 받은 표는 도착할 때까지 보관합니다. 표 구성에 따라 투입 방법이 다르면 직원에게 보여주세요.",
+        "open": true
+      },
+      {
+        "title": "② ICOCA·Suica 등 교통카드가 있어요",
+        "text": "각자 사용할 카드와 잔액을 준비합니다. 입장 때 터치한 같은 카드로 난바에서 다시 터치해 나옵니다. 공항급행에는 별도 특급권이 없지만, 라피트는 교통카드만으로 탑승할 수 없고 지정석 특급권을 별도로 준비해야 합니다."
+      },
+      {
+        "title": "③ 온라인에서 라피트 상품을 샀어요",
+        "text": "구매 확인서만으로 바로 타지 마세요. 구매처 안내에서 종이표 교환형인지 QR 직접 입장형인지 확인합니다. 난카이 Rapi:t Digital Ticket은 열차·좌석을 지정한 뒤 티켓 화면의 QR로 전용 개찰구를 통과합니다. 다른 상품에 같은 규칙을 적용하지 마세요. 가족 여러 명의 사용·분배 방식도 구매처 안내를 따르고, 통신·배터리를 확보하세요."
+      }
+    ],
+    "phrase": "なんばまで大人3人です。早く到着する列車と、きっぷの買い方を教えてください。",
+    "mapUrl": "https://www.nankai.co.jp/traffic/station/kansaiairport.html",
+    "mapLabel": "난카이 공식 공항역 안내·승강장 보기"
+  },
+  {
+    "id": 4,
+    "icon": "🚶",
+    "tag": "환승 도보 · 가장 주의할 단계",
+    "title": "난카이 출구 → 지하철 표·개찰",
+    "from": "난카이 난바역 3층",
+    "to": "미도스지선 난바역 M20",
+    "time": "환승 도보 약 10~15분 · 가족·짐 기준 계획값",
+    "actions": [
+      "난카이 난바역에서 내려 「3F北改札口 / North Gate」로 갑니다. 보유한 표·IC·QR로 개찰구를 나옵니다. IC는 입장 때 사용한 같은 카드를 터치합니다.",
+      "북쪽 개찰구를 나온 뒤 정면 왼쪽 계단·에스컬레이터로 1층까지 내려갑니다. 사진의 개찰구와 내려가는 방향을 비교하세요.",
+      "1층에서 정면 왼쪽에 보이는 아래층 계단·에스컬레이터를 찾아 지하 1층으로 한 번 더 내려갑니다.",
+      "B1에서는 「御堂筋線 / Midosuji Line」 노선 표지를 우선 따라 「南北改札 / Minami-kita Gate」로 갑니다. 난카이·JR·다른 지하철 노선 표지와 구별하세요.",
+      "지하철 개찰구 밖에서 신사이바시(心斎橋 M19)까지의 표 또는 교통카드 잔액을 준비합니다. 난카이에서 사용한 승차권을 그대로 넣지 마세요.",
+      "위 개찰 안내에 맞춰 Osaka Metro 개찰구 안으로 들어갑니다. 그 다음에 「2番線 / Platform 2」 표지를 따라갑니다."
+    ],
+    "sign": "御堂筋線 / Midosuji Line · 빨간 M\n南北改札 / Minami-kita Gate",
+    "warning": "난카이 개찰구에서 한 번 나와, Osaka Metro 개찰구로 새로 들어가는 환승입니다. 「南北改札」은 한 개찰구 이름입니다. 표·IC 준비를 마친 뒤 2번 승강장으로 갑니다.",
+    "extra": "사진은 오사카시 서비스카운터 안내에서 3F→1F→B1 공통 구간만 참고합니다. 사진 속 화살표를 끝까지 따라 서비스카운터로 가지 마세요. B1 이후에는 御堂筋線 표지를 확인하고, 안 보이면 아래 문장을 직원에게 보여주세요. 엘리베이터 이용 시에는 역 안내도의 별도 동선을 확인합니다.",
+    "photo": "north",
+    "gallery": [
+      "down",
+      "b1"
+    ],
+    "refs": [
+      "city",
+      "nk01",
+      "m20",
+      "metrogate"
+    ],
+    "tickets": [
+      {
+        "title": "지하철 표·교통카드로 들어가는 방법",
+        "text": "종이표: 개찰구 밖 발매기에서 心斎橋까지 성인 3명분을 구입하고 각자 표를 투입합니다. 입장 후 나온 표를 다시 챙겨 신사이바시까지 보관하세요. 교통카드: 각자 사용할 카드의 잔액을 확인하고 읽는 곳에 터치합니다. 신사이바시에서도 같은 카드로 나갑니다. 문이 닫히거나 오류가 나면 억지로 통과하지 말고 직원에게 문의하세요.",
+        "open": true
+      }
+    ],
+    "phrase": "御堂筋線で心斎橋へ行きます。南北改札と、きっぷ売り場はどこですか？",
+    "mapUrl": "https://subway.osakametro.co.jp/station_guide/m/m20/index.php",
+    "mapLabel": "Osaka Metro 난바역 공식 안내도 보기"
+  },
+  {
+    "id": 5,
+    "icon": "Ⓜ",
+    "tag": "미도스지선 · M20 → M19",
+    "title": "2번 승강장, 한 정거장만",
+    "from": "미도스지선 난바역 M20",
+    "to": "신사이바시역 M19",
+    "time": "승차 약 2분 + 대기 0~7분 계획값",
+    "actions": [
+      "Osaka Metro 개찰구 안에서 「2番線 / Platform 2」로 갑니다. 아직 개찰하지 않았다면 이전 단계의 표·개찰 안내부터 확인하세요.",
+      "「梅田・新大阪・箕面萱野方面 / for Umeda, Shin-Osaka, Minoh-kayano」 표시를 확인합니다. 1번 승강장은 반대 방향입니다.",
+      "탑승 전, 가능하면 8호차 쪽(신사이바시 북쪽 계단·에스컬레이터)을 선택합니다. 엘리베이터는 9호차 쪽입니다. 가족은 평일 여성전용 6호차를 피합니다.",
+      "열차의 방향을 확인하고 탑승합니다. 혼잡하면 호차를 맞추려고 무리해서 이동하지 마세요.",
+      "한 정거장 뒤 「心斎橋 / Shinsaibashi M19」에서 내립니다. 문이 닫히기 전에 짐과 가족을 확인하세요."
+    ],
+    "sign": "2番線 → 梅田・新大阪・箕面萱野方面\nM20 なんば → M19 心斎橋",
+    "warning": "1번 승강장 「天王寺・なかもず方面」은 반대 방향! 평일 6호차는 여성전용입니다.",
+    "extra": "가족은 8호차를 우선 고려하세요. 혼잡하면 호차를 맞추려고 무리하게 이동하지 마세요. 내리는 문 방향은 지정하지 않았습니다.",
+    "refs": [
+      "m20",
+      "cars"
+    ],
+    "phrase": "心斎橋へ行きたいです。梅田・新大阪方面の2番線はこちらですか？",
+    "mapUrl": "https://subway.osakametro.co.jp/station_guide/m/m19/index.php",
+    "mapLabel": "신사이바시역 공식 안내 보기"
+  },
+  {
+    "id": 6,
+    "icon": "🏁",
+    "tag": "크리스타 나가호리 · 北8 출구",
+    "title": "북쪽 개찰구 → 북8 출구 → 병원",
+    "from": "신사이바시역 M19",
+    "to": "케즈빌딩 10층 · AND美容外科 心斎橋院",
+    "time": "도보·건물 진입 약 5~10분 계획값 (병원 안내: 역에서 3분)",
+    "actions": [
+      "신사이바시역 M19에서 내린 뒤 「北改札 / North Gate」 방향으로 이동합니다.",
+      "북쪽 개찰구에서 표·IC 등 입장 때 사용한 승차 수단으로 나옵니다. 교통카드는 같은 카드로 터치하고, 종이표는 개찰기에 넣습니다.",
+      "개찰구 밖에서 「クリスタ長堀 / CRYSTA Nagahori」 지하상가로 들어갑니다.",
+      "지하상가의 「北8 / North 8」 출구 표지를 따라 지상으로 올라갑니다. 역의 1번 출구나 8호차 번호와 다른 표시입니다.",
+      "지상에서는 「心斎橋筋商店街」를 本町(Hommachi·혼마치) 방면으로 약 2분 걷습니다. 병원 공식 안내의 방향입니다.",
+      "상점가에 면한 「ケーズビル心斎橋」에서 「AND美容外科 10F」 간판이 있는 입구를 찾습니다. 건물 주소 南船場3-6-18을 함께 확인하세요.",
+      "엘리베이터로 10층에 올라가 접수에 예약 화면을 보여줍니다. 「予約があります。こちらが予約画面です」라고 말해도 됩니다."
+    ],
+    "sign": "クリスタ長堀 / CRYSTA Nagahori\n北8 / North 8 → 本町方面 / Hommachi\nAND美容外科 10F · ケーズビル心斎橋",
+    "warning": "北8은 지하상가 출구 번호입니다. 역의 1번 출구·열차 8호차와 혼동하지 마세요. 이전 버전의 1번 출구 안내는 이번에 병원 공식 北8 동선으로 변경했습니다.",
+    "extra": "주소: 大阪市中央区南船場3-6-18 ケーズビル10F. 북8 출구·건물 입구 최신 근접 실사는 아직 확보하지 못했습니다. 간판이 안 보이면 주소와 10층을 확인하거나 병원에 문의하세요. 엘리베이터 지상 출구가 필요하면 역·지하상가 안내소에서 별도 동선을 확인하세요.",
+    "refs": [
+      "m19",
+      "clinic"
+    ],
+    "phrase": "クリスタ長堀の北8出口から、南船場3-6-18のAND美容外科10階に行きたいです。",
+    "mapUrl": "https://www.google.com/maps/dir/?api=1&origin=%E3%82%AF%E3%83%AA%E3%82%B9%E3%82%BF%E9%95%B7%E5%A0%80%20%E5%8C%978%E5%87%BA%E5%8F%A3&destination=%E5%A4%A7%E9%98%AA%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%8D%97%E8%88%B9%E5%A0%B43-6-18%20%E3%82%B1%E3%83%BC%E3%82%BA%E3%83%93%E3%83%AB&travelmode=walking",
+    "mapLabel": "北8 출구 → 병원 도보 길찾기"
+  }
+];
