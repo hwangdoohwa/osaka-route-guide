@@ -1,0 +1,11 @@
+import {steps} from './data.js';
+import {wholeRoute,currentRoute,segments} from './maps.js';
+const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const a=(url,label,secondary=false)=>`<a class="gm-button${secondary?' gm-secondary':''}" href="${escape(url)}" target="_blank" rel="noopener noreferrer">${escape(label)}</a>`;
+const panel=document.createElement('section');
+panel.className='gm-panel';panel.setAttribute('aria-labelledby','gm-title');
+panel.innerHTML=`<div class="gm-heading"><span class="gm-symbol" aria-hidden="true">G</span><div><h2 id="gm-title">구글지도와 함께 이동하기</h2><p>6단계 설명을 읽고, 필요한 구간의 지도를 여세요.</p></div></div><div class="gm-endpoints"><span>출발</span><strong>간사이공항 제2터미널 국제선 도착 로비</strong><span>도착</span><strong>AND美容外科 心斎橋院 · 케즈빌딩 10층</strong></div><div class="gm-buttons">${a(wholeRoute,'공항에서 병원까지 · 대중교통')}${a(currentRoute,'현재 위치에서 병원까지',true)}</div><p class="gm-note">현재 위치 버튼은 구글지도에서 위치를 확인합니다. 이 웹앱은 위치 권한을 요청하거나 위치를 저장하지 않습니다. 출발지가 비어 있으면 구글지도에서 ‘내 위치’를 선택하세요.</p><div id="gm-current" aria-live="polite"></div><details class="gm-segments"><summary>6단계 구간별 지도 펼치기</summary>${segments.map((s,i)=>`<section><h3>${s.id}단계 · ${escape(steps[i].title)}</h3>${a(s.url,s.label,true)}<p>${escape(s.note)}</p><a class="gm-guide" href="#step-${s.id}">${s.id}단계 사진·발권 안내 보기</a></section>`).join('')}</details><p class="gm-note gm-caution">구글지도는 검색 시점에 따라 다른 노선·출구를 제안할 수 있습니다. 열차 시각·요금은 구글지도와 운영사에서 확인하세요. 공항·역 내부에서는 기존 안내와 현장 표지판을 함께 확인하세요. 지도에는 인터넷이 필요합니다.</p>`;
+const tabs=document.querySelector('.tabs');
+if(tabs){tabs.before(panel);const css=document.createElement('link');css.rel='stylesheet';css.href='maps.css';document.head.append(css);}
+function update(){const selected=document.querySelector('#stepNav [aria-current="step"]');const id=Number(selected?.dataset.step)||1;const s=segments[id-1];document.querySelector('#gm-current').innerHTML=`<div class="gm-current-heading">지금 보고 있는 ${id}단계 지도</div>${a(s.url,s.label)}<p class="gm-note">${escape(s.note)}</p>`;}
+if(tabs){update();new MutationObserver(update).observe(document.querySelector('#stepNav'),{childList:true,subtree:true,attributes:true,attributeFilter:['aria-current']});}
